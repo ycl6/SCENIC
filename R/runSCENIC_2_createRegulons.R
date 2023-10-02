@@ -412,7 +412,7 @@ getDbAnnotations <- function(scenicOptions)
     
     if(!is.null(scenicOptions@settings$db_mcVersion))
     {
-      if(scenicOptions@settings$db_mcVersion=="v8") motifAnnotName <- paste0(motifAnnotName, "_v8")
+      if(scenicOptions@settings$db_mcVersion %in% c("v8", "v9")) motifAnnotName <- paste0(motifAnnotName, "_", scenicOptions@settings$db_mcVersion)
     }
     
     library(RcisTarget) # Lazyload
